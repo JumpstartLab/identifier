@@ -1,9 +1,5 @@
 Evaluator::Application.routes.draw do
-  root :to => 'evaluations#index'
-
-  resources :assignments
-
-  resources :evaluations
+  root :to => 'people#index'
 
   resources :people
 

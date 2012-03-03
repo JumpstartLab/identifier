@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120302160825) do
 
-  create_table "assignments", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "authentications", :force => true do |t|
     t.string   "provider",   :null => false
     t.string   "uid",        :null => false
@@ -29,21 +23,11 @@ ActiveRecord::Schema.define(:version => 20120302160825) do
 
   add_index "authentications", ["provider", "uid"], :name => "index_authentications_on_provider_and_uid"
 
-  create_table "evaluations", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "assignment_id"
-    t.integer  "person_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
   create_table "people", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "email_address"
     t.string   "email"
     t.string   "github_handle"
   end
